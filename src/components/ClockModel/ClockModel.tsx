@@ -31,9 +31,13 @@ export function ClockModel() {
           </div>
           <div className={style.clockModelImageBlockMain}>
             <div className={style.ImageBlockMainTitle}>
-              <ArrowLeft />
+              <div className={style.arrow}>
+                <ArrowLeft />
+              </div>
               <div>S.01</div>
-              <ArrowRight />
+              <div className={style.arrow}>
+                <ArrowRight />
+              </div>
             </div>
             <div>
               <img src={clockImage4} alt="image" />
