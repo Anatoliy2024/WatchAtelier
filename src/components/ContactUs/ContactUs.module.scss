@@ -1,0 +1,80 @@
+.container {
+  padding: 90px 0 50px 0;
+  @media (max-width: 800px) {
+    // display: none;
+
+    padding: 50px 0 0px 0;
+  }
+  .contact {
+    border: 1px solid #fff;
+    padding: 50px 70px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -7px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ffffff33;
+    }
+    .contactTitle {
+      font-size: 48px;
+      line-height: 70px;
+      position: relative;
+      &::after {
+        content: "Контакты";
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 80px;
+        line-height: 100px;
+        color: #ffffff14;
+      }
+    }
+    .contactInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 22px;
+
+      & > div {
+        display: flex;
+        gap: 10px;
+      }
+      .addressIcon {
+        min-width: 30px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .contactButton {
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background: #656565;
+    }
+    &:active {
+      background: #bcbcbc;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -7px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ffffff33;
+    }
+  }
+}

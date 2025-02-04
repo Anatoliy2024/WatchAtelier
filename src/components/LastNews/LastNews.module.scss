@@ -1,0 +1,107 @@
+.container {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0 111px 0;
+  @media (max-width: 800px) {
+    // display: none;
+
+    padding: 50px 0 50px 0;
+  }
+  h2 {
+    padding-bottom: 90px;
+    text-align: center;
+
+    div:first-child {
+      font-size: 48px;
+      position: relative;
+      &::before {
+        content: "Последние";
+        position: absolute;
+        top: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #00000014;
+        font-size: 80px;
+      }
+    }
+    div:last-child {
+      font-size: 85px;
+      position: relative;
+      &::before {
+        content: "Новости";
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #00000014;
+
+        font-size: clamp(110px, 10vw, 130px);
+      }
+    }
+  }
+  .mainBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+      display: flex;
+      gap: 20px;
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
+      // flex-wrap: wrap;
+
+      .contentBlock {
+        .contentBlockImg {
+          padding-bottom: 60px;
+        }
+        .contentBlockText {
+          display: flex;
+          gap: 20px;
+          .data {
+            div:first-child {
+              font-size: 96px;
+            }
+            div:last-child {
+              font-size: 40px;
+            }
+          }
+          .news {
+            font-size: 22px;
+            padding-bottom: 50px;
+            div:first-child {
+              padding-bottom: 10px;
+            }
+            div:last-child {
+              text-decoration: underline;
+
+              a {
+                color: #000;
+                &:hover {
+                  color: #989898;
+                }
+                &:active {
+                  color: #cecece;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .button {
+      padding: 20px;
+      border: 1px solid #000;
+      cursor: pointer;
+      &:hover {
+        background-color: #5e5e5e;
+      }
+      &:active {
+        background-color: #a09f9f;
+      }
+    }
+  }
+}

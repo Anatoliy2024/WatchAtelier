@@ -1,0 +1,55 @@
+.container {
+  padding: 90px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (max-width: 800px) {
+    // display: none;
+
+    padding: 50px 0 50px 0;
+  }
+  // @media(max-width:600px){
+  //   flex-direction: column;
+  // }
+  .contentFooter {
+    display: flex;
+    gap: 60px;
+    .logo {
+      display: flex;
+
+      font-size: 26px;
+    }
+    ul {
+      font-size: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      a {
+        &:hover {
+          color: #686868;
+        }
+      }
+    }
+  }
+  .socialMedia {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    a {
+      padding: 5px;
+      border-radius: 10px;
+      //   width: 13px;
+      //   height: 13px;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      cursor: pointer;
+      &:hover {
+        background: #7e7e7e;
+      }
+      &:active {
+        background: #b7b7b7;
+      }
+    }
+  }
+}

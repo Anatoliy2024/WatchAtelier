@@ -1,0 +1,98 @@
+.container {
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px 0 100px 0;
+  @media (max-width: 800px) {
+    // display: none;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+  }
+  .textBlock {
+    flex: 1;
+    min-width: 550px;
+    padding: 60px 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (max-width: 600px) {
+      min-width: 100%;
+    }
+    // align-items: center;
+    .title {
+      position: relative;
+      padding-bottom: 60px;
+      div:first-child {
+        // position: relative;
+        font-size: 48px;
+        &::after {
+          content: "Сотрудничество";
+          position: absolute;
+          top: -4px;
+          left: -52px;
+          font-size: 80px;
+          color: #13161814;
+          // @media (max-width: 1100px) {
+          //   font-size: 60px;
+          // }
+        }
+        @media (max-width: 1100px) {
+          &::after {
+            font-size: 60px;
+          }
+        }
+      }
+      // div:last-child {
+      //   font-size: 85px;
+      //   position: relative;
+
+      //   &::after {
+      //     content: "Витрин";
+      //     position: absolute;
+      //     top: -21px;
+      //     left: -62px;
+      //     font-size: 150px;
+      //     color: #13161814;
+      //   }
+      // }
+    }
+    .text {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+  .imageBlock {
+    flex: 1;
+    position: relative;
+    min-width: 150px;
+
+    img {
+      width: 610px;
+      height: 440px;
+      position: relative;
+      z-index: 2;
+      @media (max-width: 800px) {
+        // display: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    div:after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      background: #d5d5d54d;
+      width: 100%;
+      height: 100%;
+      @media (max-width: 800px) {
+        // display: none;
+        display: none;
+      }
+    }
+    // & > div {
+
+    // }
+  }
+}

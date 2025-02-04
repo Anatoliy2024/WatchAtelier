@@ -1,0 +1,97 @@
+.container {
+  padding: 146px 0 212px 0;
+  @media (max-width: 1000px) {
+    // display: none;
+
+    padding: 50px 0 50px 0;
+  }
+  .titleBlock {
+    // text-align: center;
+    position: relative;
+
+    .title {
+      text-align: center;
+
+      padding-bottom: 123px;
+      line-height: 70px;
+
+      div:first-child {
+        font-size: 48px;
+        position: relative;
+        &::after {
+          content: "Этапы";
+          color: #ffffff14;
+          font-size: 80px;
+          position: absolute;
+          top: -20px;
+
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      div:last-child {
+        font-size: 85px;
+        font-size: clamp(60px, 10vw, 85px);
+
+        position: relative;
+
+        &::after {
+          content: "Производства";
+          color: #ffffff14;
+          font-size: clamp(65px, 10vw, 130px);
+
+          // font-size: 130px;
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .blockContent {
+      flex: 1 0 48%;
+
+      .blockImage {
+        padding-bottom: 60px;
+        position: relative;
+        div {
+          color: #ffffff14;
+          position: absolute;
+          top: 0;
+          font-size: 200px;
+        }
+      }
+
+      .blockContentText {
+        display: flex;
+        gap: 20px;
+        .blockContentNumber {
+          font-size: 96px;
+        }
+        .blockContentTextMain {
+          font-size: 22px;
+        }
+      }
+    }
+    .blockContent:nth-child(2n) {
+      .blockImage {
+        div {
+          right: -240px;
+        }
+      }
+    }
+    .blockContent:nth-child(2n + 1) {
+      .blockImage {
+        div {
+          left: -240px;
+        }
+      }
+    }
+  }
+}
