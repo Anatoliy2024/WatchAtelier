@@ -1,9 +1,21 @@
 import style from "./LastNews.module.scss"
 import image1 from "../../assets/MaskGroup.png"
 import image2 from "../../assets/Rectangle40.png"
+import "animate.css"
+import { useInView } from "react-intersection-observer"
 export function LastNews() {
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
   return (
-    <div className={style.container}>
+    <div
+      ref={ref1}
+      className={`${style.container} animate__animated ${
+        inView1 ? " animate__rollIn" : " "
+      }`}
+      style={{ opacity: inView1 ? 1 : 0 }}
+    >
       <h2>
         <div>Последние</div>
         <div>Новости</div>

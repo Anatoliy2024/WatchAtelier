@@ -5,11 +5,26 @@ import clockImage3 from "../../assets/Rectangle81.png"
 import clockImage4 from "../../assets/clock_1.png"
 import { ArrowLeft } from "../../assets/svg/arrowLeft"
 import { ArrowRight } from "../../assets/svg/arrowRight"
-
+import "animate.css"
+import { useInView } from "react-intersection-observer"
 export function ClockModel() {
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
   return (
     <div className={style.container}>
-      <div className={style.clockModel}>
+      <div
+        ref={ref1}
+        className={`${style.clockModel} animate__animated ${
+          inView1 ? " animate__bounceInLeft" : " "
+        }`}
+        style={{ opacity: inView1 ? 1 : 0 }}
+      >
         <div className={style.clockModelImageBlock}>
           <div className={style.clockModelImageBlockInfo}>
             <h2>
@@ -64,7 +79,13 @@ export function ClockModel() {
           </li>
         </ul>
       </div>
-      <div className={style.dimensions}>
+      <div
+        ref={ref2}
+        className={`${style.dimensions} animate__animated ${
+          inView2 ? " animate__bounceInRight" : " "
+        }`}
+        style={{ opacity: inView1 ? 2 : 0 }}
+      >
         <h3>Габариты</h3>
         <ul>
           <li>Ширина с головкой 44 мм, высота 12.6 мм, длина 50 мм. </li>

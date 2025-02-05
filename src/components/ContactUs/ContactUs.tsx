@@ -6,11 +6,23 @@ import icon2 from "../../assets/icons/Group2.png"
 import icon3 from "../../assets/icons/Group8.png"
 import icon4 from "../../assets/icons/Group1.png"
 import icon5 from "../../assets/icons/Group.png"
-
+import "animate.css"
+import { useInView } from "react-intersection-observer"
 export function ContactUs() {
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+
   return (
     <div className={style.container}>
-      <div className={style.contact}>
+      <div
+        ref={ref1}
+        className={`${style.contact} animate__animated ${
+          inView1 ? " animate__fadeInTopLeft" : ""
+        }`}
+        style={{ opacity: inView1 ? 1 : 0 }}
+      >
         <div className={style.contactTitle}>Контакты</div>
         <div className={style.contactInfo}>
           <div>

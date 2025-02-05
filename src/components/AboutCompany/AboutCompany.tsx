@@ -1,20 +1,62 @@
 import style from "./AboutCompany.module.scss"
 import clock2 from "../../assets/Clock-2.png"
 import clock3 from "../../assets/Clock-3.png"
+import "animate.css"
+import { useInView } from "react-intersection-observer"
 export function AboutCompany() {
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+  const { ref: ref3, inView: inView3 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+  const { ref: ref4, inView: inView4 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
   return (
     <div className={style.container}>
       <div className={style.warapper}>
         <div className={style.imgContainer}>
-          <div className={style.imgBlock1}>
+          <div
+            ref={ref2}
+            className={`${style.imgBlock1} animate__animated ${
+              inView2 ? " animate__fadeInDown" : " "
+            }`}
+            style={{ opacity: inView2 ? 1 : 0 }}
+          >
             <img src={clock2} alt="img" />
           </div>
-          <div className={style.imgBlock2}>
+          <div
+            ref={ref3}
+            className={`${style.imgBlock2} animate__animated ${
+              inView3 ? " animate__fadeInLeft" : " "
+            }`}
+            style={{ opacity: inView3 ? 1 : 0 }}
+          >
             <img src={clock3} alt="img" />
           </div>
-          <div className={style.imgBlock3}></div>
+          <div
+            ref={ref4}
+            className={`${style.imgBlock3} animate__animated ${
+              inView4 ? " animate__fadeInUp" : " "
+            }`}
+            style={{ opacity: inView4 ? 1 : 0 }}
+          ></div>
         </div>
-        <div className={style.textContainer}>
+        <div
+          ref={ref1}
+          className={`${style.textContainer} animate__animated ${
+            inView1 ? " animate__zoomIn" : " "
+          }`}
+          style={{ opacity: inView1 ? 1 : 0 }}
+        >
           <div className={style.textTitle}>
             <div>Подробнее о</div>
             <div className={style.textTitleBg}>

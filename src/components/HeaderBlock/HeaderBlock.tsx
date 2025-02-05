@@ -3,7 +3,8 @@ import style from "./HeaderBlock.module.scss"
 import clockImage from "../../assets/clock_1.png"
 import playImage from "../../assets/Polygon.png"
 import { useEffect, useState } from "react"
-
+import "animate.css"
+import { useInView } from "react-intersection-observer"
 export function HeaderBlock() {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   useEffect(() => {
@@ -16,6 +17,14 @@ export function HeaderBlock() {
       document.body.style.overflow = "" // Чистим стиль при размонтировании
     }
   }, [showMenu])
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
   return (
     <div className={style.containerHeader}>
       <div className={style.headerTop}>
@@ -67,7 +76,13 @@ export function HeaderBlock() {
         </div>
       </div>
       <div className={style.headerMain}>
-        <div className={style.headerMainContainer}>
+        <div
+          ref={ref1}
+          className={`${style.headerMainContainer} animate__animated ${
+            inView1 ? " animate__pulse" : " "
+          }`}
+          style={{ opacity: inView1 ? 1 : 0 }}
+        >
           <div className={style.headerMainText}>
             <div>Часовое ателье</div>
             <div>Дмитрия Котова</div>
@@ -82,7 +97,13 @@ export function HeaderBlock() {
             </div>
           </div>
         </div>
-        <div>
+        <div
+          ref={ref2}
+          className={`animate__animated ${
+            inView2 ? " animate__fadeInRight" : " "
+          }`}
+          style={{ opacity: inView2 ? 1 : 0 }}
+        >
           <img src={clockImage} alt="image" />
         </div>
       </div>
