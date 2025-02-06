@@ -84,7 +84,7 @@ export function ClockModel() {
         className={`${style.dimensions} animate__animated ${
           inView2 ? " animate__bounceInRight" : " "
         }`}
-        style={{ opacity: inView1 ? 2 : 0 }}
+        style={{ opacity: inView2 ? 2 : 0 }}
       >
         <h3>Габариты</h3>
         <ul>
